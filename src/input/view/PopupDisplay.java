@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
  * @author nhay7834
  *
  */
+
 public class PopupDisplay 
 {
 	/**
@@ -14,6 +15,7 @@ public class PopupDisplay
 	 * @param input The supplied question in the popup.
 	 * @return The user typed response to the question.
 	 */
+	
 	public String getAnswer(String input)
 	{
 		String answer = "";
@@ -21,12 +23,14 @@ public class PopupDisplay
 		answer = JOptionPane.showInputDialog(null, input);
 		
 		return answer;
-	}
+}
+
 /**
  * This puts the users answer into a string
  * @param input This is the users answer.
  */
-	public void displayResponse(String input)
+	
+public void displayResponse(String input)
 	{
 		JOptionPane.showMessageDialog(null, input);
 	}

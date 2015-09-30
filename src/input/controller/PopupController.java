@@ -9,12 +9,13 @@ public class PopupController
 	private PopupDisplay myPopups;
 	private Thing myThing;
 
-	public PopupController()
+public PopupController()
 	{
 		myPopups = new PopupDisplay();
 	}
 	
 	public void start()
+
 	{
 		String name = myPopups.getAnswer("Type in your name");
 		
@@ -65,13 +66,19 @@ public class PopupController
 		myThing = new Thing(name, age, weight);
 	}
 	
+	/**
+	 * This tests to make sure our user input is a valid int so the program will not crash.
+	 * @param input is a temporary holding spot for user input.
+	 * @return if the test passes it returns the input value.
+	 */
+
 	private boolean isInteger(String input)
 	{
 		boolean isInt = false;
 		
 		try 
 		{
-			int validInteger = Integer.parseInt(input);
+			int validInt = Integer.parseInt(input);
 			isInt = true;
 		}
 		catch(NumberFormatException error)
@@ -82,6 +89,12 @@ public class PopupController
 		
 		return isInt;
 	}
+	
+	/**
+	 * this tests that the user input a correct value for weight.
+	 * @param input temporary holing spot for input
+	 * @return if the tests passes it sets the weight value to the input.
+	 */
 	
 	private boolean isDouble(String input)
 	{
