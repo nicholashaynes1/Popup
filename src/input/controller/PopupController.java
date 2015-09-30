@@ -1,6 +1,7 @@
 package input.controller;
 
 import input.model.Thing;
+
 import input.view.PopupDisplay;
 
 public class PopupController 
@@ -21,6 +22,13 @@ public class PopupController
 		
 		int age; 
 		String tempAge = myPopups.getAnswer("Type in your age");
+		
+		while(!isInteger(tempAge))
+		{
+			tempAge = myPopups.getAnswer("Type in a integer value");
+		}
+		
+		
 		if(isInteger(tempAge))
 		{
 			age = Integer.parseInt(tempAge);
@@ -30,12 +38,17 @@ public class PopupController
 			age = -1;
 		}
 		
-		
-		
 		myPopups.displayResponse("you typed in " + age);
+		
+		
 		
 		double weight;
 		String tempWeight = myPopups.getAnswer("Type in your weight");
+		
+		while(!isDouble(tempWeight))
+		{
+			tempWeight = myPopups.getAnswer("type in a double value");
+		}
 		
 		if(isDouble(tempWeight))
 		{
@@ -81,7 +94,7 @@ public class PopupController
 		}
 		catch(NumberFormatException error)
 		{
-			myPopups.displayResponse("you had the wrong answer");
+			myPopups.displayResponse("you had the wrong type");
 		}
 		
 		return isDouble;
