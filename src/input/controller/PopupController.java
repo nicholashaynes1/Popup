@@ -27,7 +27,12 @@ public PopupController()
 		while(!isInteger(tempAge))
 		{
 			tempAge = myPopups.getAnswer("Type in a integer value");
-		}
+		
+		
+	}
+		
+		
+		
 		
 		
 		if(isInteger(tempAge))
@@ -64,7 +69,9 @@ public PopupController()
 		myPopups.displayResponse("You typed in " + weight);
 		
 		myThing = new Thing(name, age, weight);
-	}
+		
+		myPopups.displayResponse(myThing.toString());
+		}
 	
 	/**
 	 * This tests to make sure our user input is a valid int so the program will not crash.
@@ -111,6 +118,8 @@ public PopupController()
 		}
 		
 		return isDouble;
-	}
+	
+		}
+	
 	
 }
